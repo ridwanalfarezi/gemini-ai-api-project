@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini AI Assistant</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Include marked.js for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-content">
+          <div class="header-text">
+            <h1>🤖 Gemini AI Assistant</h1>
+            <p>Chat with AI or upload files for analysis</p>
+          </div>
+          <button
+            id="clearChatBtn"
+            class="clear-chat-btn"
+            title="Clear conversation history"
+          >
+            🗑️ Clear Chat
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <!-- Enhanced Chat Section with File Upload -->
+        <section class="chat-section">
+          <h2>💬 Chat with AI</h2>
+          <div class="chat-container">
+            <div id="chatMessages" class="chat-messages">
+              <!-- Chat loading spinner -->
+              <div id="chatLoading" class="section-loading hidden">
+                <div class="section-spinner"></div>
+                <p>AI is thinking...</p>
+              </div>
+            </div>
+
+            <!-- File Preview Area -->
+            <div id="filePreview" class="file-preview hidden"></div>
+
+            <div class="chat-input-container">
+              <div class="chat-input-group">
+                <div class="input-wrapper">
+                  <textarea
+                    id="chatInput"
+                    placeholder="Type your message or upload files with instructions..."
+                    rows="1"
+                  ></textarea>
+                  <div class="input-actions">
+                    <button
+                      id="attachBtn"
+                      class="attach-btn"
+                      title="Attach files"
+                    >
+                      📎
+                    </button>
+                    <input
+                      type="file"
+                      id="fileInput"
+                      multiple
+                      accept="image/*,video/*,audio/*,.txt,.pdf,.doc,.docx"
+                      style="display: none"
+                    />
+                  </div>
+                </div>
+                <button id="sendBtn">Send</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
